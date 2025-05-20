@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+  <title>Login - IAS Auth</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="auth-container">
+    <!-- Login Form -->
+    <div id="login-form-container" class="auth-form">
+      <h2>Login</h2>
+      <div id="login-error" class="error-message"></div>
+      
+      <form id="login-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        
+        <button type="submit" class="btn-primary">Login</button>
+      </form>
+      
+      <p class="auth-link">
+        Don't have an account? <a href="register.html">Register here</a>
+      </p>
+    </div>
+
+    <!-- Email Verification Notice -->
+    <div id="verify-email-notice" class="auth-form" style="display: none;">
+      <h2>Email Verification Required</h2>
+      <p>Your email address needs to be verified before you can log in.</p>
+      <p>A verification code has been sent to your email.</p>
+      
+      <button id="proceed-to-verify" class="btn-primary">Verify Email</button>
+      <button id="resend-verification" class="btn-secondary">Resend Code</button>
+    </div>
+
+    <!-- OTP Verification -->
+    <div id="otp-form-container" class="auth-form" style="display: none;">
+      <h2>Enter OTP</h2>
+      <p>Please enter the one-time password sent to your email.</p>
+      
+      <div id="otp-error" class="error-message"></div>
+      
+      <form id="otp-form">
+        <div class="form-group">
+          <label for="otp">One-Time Password</label>
+          <input type="text" 
+                 id="otp" 
+                 name="otp" 
+                 maxlength="6" 
+                 minlength="6" 
+                 pattern="[0-9]{6}" 
+                 inputmode="numeric" 
+                 autocomplete="one-time-code"
+                 required>
+          <small>Enter the 6-digit code sent to your email</small>
+        </div>
+        
+        <button type="submit" class="btn-primary">Verify OTP</button>
+      </form>
+
+      <!-- Backup Codes Section -->
+      <div class="backup-code-section">
+        <p class="divider">OR</p>
+        <h3>Use Backup Code</h3>
+        <form id="backup-code-form">
+          <div class="form-group">
+            <label for="backup-code">Backup Code</label>
+            <input type="text" 
+                   id="backup-code" 
+                   name="backup-code" 
+                   maxlength="8" 
+                   pattern="[A-F0-9]{8}"
+                   placeholder="Enter 8-character backup code"
+                   autocomplete="off">
+            <small>Use one of your backup codes if you can't access your email</small>
+          </div>
+          <button type="submit" class="btn-secondary">Use Backup Code</button>
+        </form>
+      </div>
+      
+      <div class="form-actions">
+        <button id="resend-otp" class="btn-link">Resend verification code</button>
+        <span id="timer" class="timer"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/login.js"></script>
+</body>
+</html> 

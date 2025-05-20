@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+  <title>Register - IAS Auth</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="auth-container">
+    <!-- Registration Form -->
+    <div id="registration-form" class="auth-form">
+      <h2>Create Account</h2>
+      <div id="register-error" class="error-message"></div>
+      
+      <form id="register-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+          <small>Must contain at least 8 characters, one uppercase letter, one number, and one special character</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+        
+        <button type="submit" class="btn-primary">Register</button>
+      </form>
+      
+      <p class="auth-link">
+        Already have an account? <a href="login.html">Login here</a>
+      </p>
+    </div>
+
+    <!-- Backup Codes Display -->
+    <div id="backup-codes" class="auth-form" style="display: none;">
+      <h2>Registration Successful!</h2>
+      <p>A verification code has been sent to your email. Please verify your email before logging in.</p>
+      
+      <div class="backup-codes-container">
+        <h3>Your Backup Codes</h3>
+        <p>Please save these backup codes in a secure place. You will need them if you lose access to your email.</p>
+        <div id="backup-codes-list" class="backup-codes-list"></div>
+        <button id="copy-codes" class="btn-secondary">Copy Codes</button>
+      </div>
+      
+      <button id="proceed-to-login" class="btn-primary">Proceed to Login</button>
+    </div>
+  </div>
+
+  <!-- Load scripts -->
+  <script src="../js/errorHandler.js"></script>
+  <script src="../js/register.js"></script>
+</body>
+</html> 

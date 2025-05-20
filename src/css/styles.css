@@ -1,0 +1,421 @@
+/* Global Styles */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5f5f5;
+    --error-color: #e74c3c;
+    --success-color: #2ecc71;
+    --warning-color: #f1c40f;
+    --text-color: #333;
+    --border-color: #ddd;
+    --success-bg: #E8F5E9;
+    --error-bg: #FFEBEE;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Auth Container */
+.auth-container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+.auth-form {
+    padding: 20px;
+}
+
+.auth-form h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+    font-size: 12px;
+}
+
+/* Button Styles */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #357abd;
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #e8e8e8;
+}
+
+/* Message Styles */
+.error-message {
+    color: var(--error-color);
+    background-color: rgba(231, 76, 60, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    display: none;
+}
+
+.error-message:not(:empty) {
+    display: block;
+}
+
+.success-message {
+    color: var(--success-color);
+    background-color: rgba(46, 204, 113, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.warning-message {
+    color: var(--warning-color);
+    background-color: rgba(241, 196, 15, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.info-message {
+    color: var(--primary-color);
+    background-color: rgba(74, 144, 226, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* Link Styles */
+.auth-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.auth-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+/* Backup Codes Styles */
+.backup-codes-container {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+}
+
+.backup-codes-container h3 {
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+.backup-codes-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.backup-code {
+    background-color: white;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 16px;
+    border: 1px solid var(--border-color);
+}
+
+/* Verification Form Styles */
+#otp-verification {
+    text-align: center;
+}
+
+#otp-form input {
+    letter-spacing: 4px;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-actions button {
+    flex: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .auth-container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .backup-codes-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Verification Pages */
+.success-form {
+    text-align: center;
+}
+
+.success-form h2 {
+    color: var(--success-color);
+    margin-bottom: 20px;
+}
+
+.success-message {
+    background-color: var(--success-bg);
+    border: 1px solid var(--success-color);
+    border-radius: 4px;
+    padding: 15px;
+    margin: 20px 0;
+    color: var(--success-color);
+}
+
+.error-form {
+    text-align: center;
+}
+
+.error-form h2 {
+    color: var(--error-color);
+    margin-bottom: 20px;
+}
+
+.error-message {
+    background-color: var(--error-bg);
+    border: 1px solid var(--error-color);
+    border-radius: 4px;
+    padding: 15px;
+    margin: 20px 0;
+    color: var(--error-color);
+}
+
+/* Resend Section */
+.resend-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.timer {
+    font-size: 14px;
+    color: #666;
+    min-width: 50px;
+}
+
+/* Button Link Style */
+.btn-link {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    font: inherit;
+    margin: 5px 0;
+}
+
+.btn-link:disabled {
+    color: #999;
+    text-decoration: none;
+    cursor: not-allowed;
+}
+
+/* Divider */
+.divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+/* Add to your existing styles */
+
+.dashboard-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.dashboard-container header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.debug-panel {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.debug-section {
+  margin-top: 15px;
+}
+
+.debug-section p {
+  margin: 10px 0;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.status-active {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.status-inactive {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.status-error {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.status-loading {
+  color: #6c757d;
+  font-weight: bold;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Backup Code Section */
+.backup-code-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.divider {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 15px 0;
+}
+
+.backup-code-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.backup-code-section input {
+  font-family: monospace;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+} 

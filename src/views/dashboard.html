@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';">
+  <title>Dashboard - IAS Auth</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <header>
+      <h1>Dashboard</h1>
+      <button id="logout-button" class="btn-danger">Logout</button>
+    </header>
+
+    <main>
+      <div id="debug-info" class="debug-panel">
+        <h2>Debug Information</h2>
+        <div class="debug-section">
+          <p><strong>Session Status:</strong> <span class="status-loading">Loading...</span></p>
+          <p><strong>Session ID:</strong> Loading...</p>
+          <p><strong>Authenticated:</strong> Loading...</p>
+          <p><strong>User Email:</strong> Loading...</p>
+          <p><strong>Last Activity:</strong> Loading...</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/dashboard.js"></script>
+
+  <style>
+    .dashboard-container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .debug-info {
+      background: #f5f5f5;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 4px;
+      font-family: monospace;
+      white-space: pre-line;
+    }
+
+    .debug-info pre {
+      margin: 0;
+      white-space: pre-line;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .btn-submit {
+      background: #dc3545;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    .btn-submit:hover {
+      background: #c82333;
+    }
+
+    #userInfo {
+      margin: 20px 0;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 4px;
+    }
+  </style>
+</body>
+</html> 

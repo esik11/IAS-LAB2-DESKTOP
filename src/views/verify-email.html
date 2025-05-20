@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Two-Factor Authentication - IAS Auth</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-form">
+            <h2>Two-Factor Authentication</h2>
+            <p>Please enter the verification code sent to your email address.</p>
+            
+            <div id="verify-error" class="error-message"></div>
+            
+            <form id="verify-form">
+                <div class="form-group">
+                    <label for="verification-code">Authentication Code</label>
+                    <input type="text" id="verification-code" name="verification-code" maxlength="6" required>
+                    <small>Enter the 6-digit code sent to your email</small>
+                </div>
+                
+                <button type="submit" class="btn-primary">Verify Code</button>
+            </form>
+
+            <!-- Backup Code Form -->
+            <div class="backup-code-section">
+                <p class="divider">OR</p>
+                <h3>Use Backup Code</h3>
+                <form id="backup-code-form">
+                    <div class="form-group">
+                        <label for="backup-code">Backup Code</label>
+                        <input type="text" id="backup-code" name="backup-code" maxlength="8" placeholder="Enter 8-character backup code">
+                        <small>Use one of your backup codes if you can't access your email</small>
+                    </div>
+                    <button type="submit" class="btn-secondary">Use Backup Code</button>
+                </form>
+            </div>
+            
+            <div class="form-actions">
+                <div class="resend-section">
+                    <button id="resend-code" class="btn-link">Resend verification code</button>
+                    <span id="timer" class="timer"></span>
+                </div>
+                <a href="login.html" class="btn-link">Back to Login</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/verify-email.js"></script>
+</body>
+</html> 
